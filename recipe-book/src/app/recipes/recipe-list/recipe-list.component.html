@@ -6,16 +6,8 @@
 <hr>
 <div class="row">
     <div class="col-xs-12">
-        <a *ngFor ="let item of recipes" href="#" class="list-group-item clearfix">
-            <div class="pull-left">
-                <h4 class="list-group-item-heading">{{item.name}}</h4>
-                <p class="list-group-item-text">{{item.description}}</p>
-            </div>
-            <span class="pull-right">
-                <img [src]="item.imagePath" alt="{{item.name}}" class="img-responsive" style="max-height: 50px;">
-            </span>
-        </a>
-            <app-recipe-item></app-recipe-item>
+     
+            <app-recipe-item  *ngFor ="let item of recipes" [recipe]="item" (recipeSelected)="onRecipesSelected(item)"></app-recipe-item>
     </div>
 </div>
 
