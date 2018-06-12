@@ -12,6 +12,7 @@ export class RecipeService {
     new Recipe(
       'Tasty Chicken Curry',
       'A super-tasty spicy(non-veg) Indian Recipe',
+      // tslint:disable-next-line:max-line-length
       'https://i2.wp.com/media.hungryforever.com/wp-content/uploads/2017/07/10125602/andhra-chicken-curry-recipes.jpg?ssl=1?w=1269&strip=all&quality=80',
       [
         new Ingredient('Meat', 1),
@@ -28,6 +29,11 @@ export class RecipeService {
   ];
 
   constructor(private slService: ShoppingListService) {}
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
+  }
 
   getRecipes() {
     return this.recipes.slice();
