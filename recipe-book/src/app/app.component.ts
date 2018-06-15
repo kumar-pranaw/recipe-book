@@ -9,13 +9,14 @@ import * as firebase from 'firebase';
 export class AppComponent implements OnInit {
   loadedFeature = 'recipe';
 
+  ngOnInit() {
+    firebase.initializeApp({
+      apiKey: 'AIzaSyCVbLIYXifIDVQCxbd79vO5-5Hi5PGbAcU',
+      authDomain: 'my-recipe-book-f7422.firebaseapp.com'
+    });
+  }
+
   onNavigate(feature: string) {
     this.loadedFeature = feature;
-  }
-  ngOnInit() {
-firebase.initializeApp({
-  apiKey: 'AIzaSyCVbLIYXifIDVQCxbd79vO5-5Hi5PGbAcU',
-    authDomain: 'my-recipe-book-f7422.firebaseapp.com'
-});
   }
 }
