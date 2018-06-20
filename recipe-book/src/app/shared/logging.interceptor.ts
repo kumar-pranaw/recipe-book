@@ -8,6 +8,6 @@ export class LoggingInterceptor implements HttpInterceptor {
       event => {
         console.log('Logging interceptor', event);
       }
-    );
+    )
   }
 }
